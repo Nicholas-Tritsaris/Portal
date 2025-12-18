@@ -7,50 +7,66 @@
   <style>
     body {
       margin: 0;
-      background: linear-gradient(180deg, #001f3f 0%, #003366 40%, #004c99 100%);
-      color: #fff;
-      font-family: "Comic Sans MS", "Trebuchet MS", Verdana, sans-serif;
+      background: #000;
+      color: #0f0;
+      font-family: "Courier New", "Lucida Console", monospace;
+      overflow-x: hidden;
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 1px, transparent 1px, transparent 2px);
+      pointer-events: none;
+      z-index: 9999;
     }
     header {
       text-align: center;
       padding: 12px;
+      border-bottom: 2px solid #0f0;
     }
     .logo {
       display: inline-block;
       padding: 10px 18px;
-      border: 3px ridge #c0d8ff;
-      background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
-      box-shadow: 0 0 12px rgba(0, 200, 255, 0.6);
-      text-shadow: 0 0 6px #9be7ff;
+      border: 2px solid #0f0;
+      background: #050505;
+      text-shadow: 0 0 8px #0f0;
       font-weight: bold;
-      color: #eef7ff;
+      color: #0f0;
+      font-size: 1.5em;
+      animation: glitch 2s infinite;
     }
     marquee {
       margin: 12px auto;
       max-width: 860px;
-      color: #ffff99;
-      background: rgba(0, 0, 0, 0.25);
-      border: 2px groove #99ccff;
+      color: #0f0;
+      background: #111;
+      border: 1px dashed #0f0;
       padding: 6px 10px;
     }
     nav {
       display: flex;
       justify-content: center;
       gap: 10px;
-      background: #0b2f66;
-      border-bottom: 3px ridge #6fbaff;
+      background: #0a0a0a;
+      border-bottom: 2px solid #0f0;
       padding: 8px;
     }
     nav a {
-      color: #e7f3ff;
+      color: #0f0;
       text-decoration: none;
       padding: 8px 12px;
-      border: 2px outset #b7dcff;
-      background: #1d4f8a;
+      border: 1px solid #0f0;
+      background: #111;
     }
     nav a:hover {
-      color: #ffffcc;
-      border-style: inset;
+      background: #0f0;
+      color: #000;
+      text-shadow: none;
     }
     main {
       display: flex;
@@ -58,134 +74,171 @@
       max-width: 900px;
       margin: 20px auto;
       padding: 20px;
-      border: 3px double #99ccff;
-      background: rgba(255,255,255,0.08);
+      border: 2px solid #0f0;
+      background: rgba(0, 255, 0, 0.05);
     }
     .main-content {
       flex: 3;
     }
     .sidebar {
       flex: 1;
-      border-left: 2px groove #99ccff;
+      border-left: 1px dashed #0f0;
       padding-left: 20px;
     }
     .sidebar-widget {
       margin-bottom: 20px;
       padding: 10px;
-      border: 2px ridge #c0d8ff;
-      background: rgba(0,0,0,0.2);
+      border: 1px solid #0f0;
+      background: #050505;
     }
     .sidebar-widget h2 {
       margin-top: 0;
       font-size: 1.2em;
     }
     .sidebar-widget ul {
-      list-style-type: none;
-      padding-left: 0;
+      list-style-type: square;
+      padding-left: 20px;
+      color: #0f0;
     }
-    .sidebar-widget ul li {
-      margin-bottom: 8px;
+    .sidebar-widget a {
+      color: #0f0;
     }
     .search-input {
       width: 120px;
-      background: #0b2f66;
-      border: 2px inset #6fbaff;
-      color: #e7f3ff;
+      background: #000;
+      border: 1px inset #0f0;
+      color: #0f0;
       padding: 4px;
     }
     .search-button {
-      background: #1d4f8a;
-      border: 2px outset #b7dcff;
-      color: #e7f3ff;
+      background: #111;
+      border: 1px outset #0f0;
+      color: #0f0;
       padding: 4px 8px;
     }
     .visitor-counter {
       background: #000;
       color: #0f0;
       padding: 5px;
-      border: 2px inset #333;
+      border: 1px inset #0f0;
       font-family: "Courier New", monospace;
       text-align: center;
     }
     h2 {
-      color: #aee3ff;
-      text-shadow: 0 0 6px rgba(175, 231, 255, 0.55);
+      color: #0f0;
+      text-shadow: 0 0 6px #0f0;
+      animation: glitch 3s infinite alternate;
     }
     footer {
       text-align: center;
       padding: 12px;
-      color: #dbefff;
+      color: #0f0;
       font-size: 12px;
+      border-top: 2px solid #0f0;
     }
-    .blink {
-      animation: blink 1s steps(2, start) infinite;
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #0f0;
+      font-size: 14px;
     }
-    @keyframes blink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0.25; }
+    .glitch {
+      animation: glitch 1.5s infinite alternate;
+    }
+    @keyframes glitch {
+      0% {
+        transform: translate(0);
+        text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+      }
+      25% {
+        transform: translate(2px, -2px);
+        text-shadow: 0 0 5px #f0f, 0 0 10px #f0f;
+      }
+      50% {
+        transform: translate(-2px, 2px);
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+      }
+      75% {
+        transform: translate(2px, 2px);
+        text-shadow: 0 0 5px #ff0, 0 0 10px #ff0;
+      }
+      100% {
+        transform: translate(0);
+        text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <span class="blink">★</span> Retro Portal <span class="blink">★</span>
-    </div>
-    <marquee behavior="scroll" direction="left" scrollamount="4">
-      Welcome to the Portal — your gateway to retro projects and experiments!
+    <div class="logo glitch">> Chaotic Science Portal_</div>
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      SYSTEM ALERT: Anomaly detected in Sector 7G. Temporal distortions imminent. Proceed with caution. All personnel must verify their quantum signatures.
     </marquee>
   </header>
 
   <nav>
-    <a href="../index.html">Main Hub</a>
-    <a href="#projects">Portal Projects</a>
-    <a href="#about">About Portal</a>
+    <a href="#node1">NODE_01</a>
+    <a href="#node2">NODE_02</a>
+    <a href="#node3">NODE_03</a>
   </nav>
 
   <main>
     <div class="main-content">
-      <h2 id="projects">Portal Projects</h2>
-      <p>This repository hosts the Portal section of Nicholas Tritsaris’ retro web collection. It acts as a gateway to experiments, side projects, and creative explorations.</p>
+      <h2 id="node1" class="glitch">Access Point: Mainframe</h2>
+      <p>You have breached the primary mainframe. The system is unstable, but the data streams are active. Core functionalities are fragmented across multiple nodes. Accessing critical systems may cause further destabilization.</p>
 
-      <h2 id="about">About Portal</h2>
-      <p><strong>Retro Portal</strong> is styled with the same nostalgic early‑2000s aesthetic as the main hub. It’s a launchpad for new ideas, interactive content, and experimental retro computing projects.</p>
+      <pre>
+  _______   ________   _______   _________
+ /       \ /        \ /       \ /         \
+ $$$$$$$  |$$$$$$$$  |$$$$$$$  |$$$$$$$$$  |
+ $$ |__$$ |$$ |__$$ |$$ |__$$ |$$ |__
+ $$    $$< $$    $$ |$$    $$< $$ |
+ $$$$$$$  |$$$$$$$$ |$$$$$$$  |$$$$$$$$$  |
+ $$ |__$$ |$$ |  $$ |$$ |__$$ |$$ |__
+ $$    $$/ $$ |  $$ |$$    $$/ $$ |
+ $$$$$$$/  $$/   $$/ $$$$$$$/  $$/
+      </pre>
+
+      <h2 id="node2">Node_02: Corrupted Data</h2>
+      <p>This node contains corrupted archives and fragmented logs. The information is volatile and may trigger system defenses. Proceed with caution. Unauthorized access is logged and traced.</p>
       <ul>
-        <li>🔗 Gateway to different projects and archives</li>
-        <li>🎮 Retro theme consistent with the main site</li>
-        <li>🧩 Exploration through sub‑pages and experiments</li>
-        <li>🌐 Part of the broader retro web ecosystem</li>
+        <li>[LOG] Anomaly Detected: Sector 7G</li>
+        <li>[LOG] Temporal Distortion Field Active</li>
+        <li>[LOG] Quantum Signature Verification Required</li>
       </ul>
-      <img src="https://www.animatedimages.org/data/media/695/animated-under-construction-image-0035.gif" alt="Under Construction" style="margin-top: 20px;">
+      <img src="https://i.gifer.com/origin/d7/d762839f16063ba80d46387c148568c3_w200.gif" alt="Sci-Fi GIF" style="margin-top: 20px;">
     </div>
     <div class="sidebar">
       <div class="sidebar-widget">
-        <h2>What's New</h2>
+        <h2 class="glitch">System Alerts</h2>
         <ul>
-          <li><strong>Jan 1, 2024:</strong> Portal launched!</li>
-          <li><strong>Jan 15, 2024:</strong> New project added.</li>
+          <li><strong>ALERT:</strong> Unstable temporal field detected.</li>
+          <li><strong>ALERT:</strong> Quantum signature mismatch.</li>
         </ul>
       </div>
       <div class="sidebar-widget">
-        <h2>Cool Links</h2>
+        <h2>External Nodes</h2>
         <ul>
-          <li><a href="#">Old School Websites</a></li>
-          <li><a href="#">Retro Gaming Zone</a></li>
+          <li><a href="#">Encrypted Archives</a></li>
+          <li><a href="#">Dark Web Gateways</a></li>
         </ul>
       </div>
       <div class="sidebar-widget">
-        <h2>Search</h2>
-        <input type="text" class="search-input" placeholder="Search...">
-        <button class="search-button">Go</button>
+        <h2>Command</h2>
+        <input type="text" class="search-input" placeholder="> command...">
+        <button class="search-button">Execute</button>
       </div>
-      <div class="sidebar-widget">
-        <h2>Visitors</h2>
-        <div class="visitor-counter">001234</div>
+       <div class="sidebar-widget">
+        <h2>Active Agents</h2>
+        <div class="visitor-counter">000013</div>
       </div>
+      <img src="https://64.media.tumblr.com/tumblr_m9ahtzML4r1r16qfao1_r1_500.gif" alt="Retro Sci-Fi GIF">
     </div>
   </main>
 
   <footer>
-    © 2000–2025 Retro Portal • Part of Nicholas Tritsaris’ Retro Web Collection • <span class="blink">Under Perpetual Construction</span>
+    [SYSTEM OFFLINE] Coded by N. Tritsaris • Anomaly Detected in Sector 7G • <span class="glitch">SYSTEM UNSTABLE</span>
   </footer>
 </body>
 </html>
