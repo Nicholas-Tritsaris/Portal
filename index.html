@@ -53,11 +53,59 @@
       border-style: inset;
     }
     main {
+      display: flex;
+      gap: 20px;
       max-width: 900px;
       margin: 20px auto;
       padding: 20px;
       border: 3px double #99ccff;
       background: rgba(255,255,255,0.08);
+    }
+    .main-content {
+      flex: 3;
+    }
+    .sidebar {
+      flex: 1;
+      border-left: 2px groove #99ccff;
+      padding-left: 20px;
+    }
+    .sidebar-widget {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 2px ridge #c0d8ff;
+      background: rgba(0,0,0,0.2);
+    }
+    .sidebar-widget h2 {
+      margin-top: 0;
+      font-size: 1.2em;
+    }
+    .sidebar-widget ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .sidebar-widget ul li {
+      margin-bottom: 8px;
+    }
+    .search-input {
+      width: 120px;
+      background: #0b2f66;
+      border: 2px inset #6fbaff;
+      color: #e7f3ff;
+      padding: 4px;
+    }
+    .search-button {
+      background: #1d4f8a;
+      border: 2px outset #b7dcff;
+      color: #e7f3ff;
+      padding: 4px 8px;
+    }
+    .visitor-counter {
+      background: #000;
+      color: #0f0;
+      padding: 5px;
+      border: 2px inset #333;
+      font-family: "Courier New", monospace;
+      text-align: center;
     }
     h2 {
       color: #aee3ff;
@@ -95,17 +143,45 @@
   </nav>
 
   <main>
-    <h2 id="projects">Portal Projects</h2>
-    <p>This repository hosts the Portal section of Nicholas Tritsaris’ retro web collection. It acts as a gateway to experiments, side projects, and creative explorations.</p>
+    <div class="main-content">
+      <h2 id="projects">Portal Projects</h2>
+      <p>This repository hosts the Portal section of Nicholas Tritsaris’ retro web collection. It acts as a gateway to experiments, side projects, and creative explorations.</p>
 
-    <h2 id="about">About Portal</h2>
-    <p><strong>Retro Portal</strong> is styled with the same nostalgic early‑2000s aesthetic as the main hub. It’s a launchpad for new ideas, interactive content, and experimental retro computing projects.</p>
-    <ul>
-      <li>🔗 Gateway to different projects and archives</li>
-      <li>🎮 Retro theme consistent with the main site</li>
-      <li>🧩 Exploration through sub‑pages and experiments</li>
-      <li>🌐 Part of the broader retro web ecosystem</li>
-    </ul>
+      <h2 id="about">About Portal</h2>
+      <p><strong>Retro Portal</strong> is styled with the same nostalgic early‑2000s aesthetic as the main hub. It’s a launchpad for new ideas, interactive content, and experimental retro computing projects.</p>
+      <ul>
+        <li>🔗 Gateway to different projects and archives</li>
+        <li>🎮 Retro theme consistent with the main site</li>
+        <li>🧩 Exploration through sub‑pages and experiments</li>
+        <li>🌐 Part of the broader retro web ecosystem</li>
+      </ul>
+      <img src="https://www.animatedimages.org/data/media/695/animated-under-construction-image-0035.gif" alt="Under Construction" style="margin-top: 20px;">
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-widget">
+        <h2>What's New</h2>
+        <ul>
+          <li><strong>Jan 1, 2024:</strong> Portal launched!</li>
+          <li><strong>Jan 15, 2024:</strong> New project added.</li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h2>Cool Links</h2>
+        <ul>
+          <li><a href="#">Old School Websites</a></li>
+          <li><a href="#">Retro Gaming Zone</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h2>Search</h2>
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-button">Go</button>
+      </div>
+      <div class="sidebar-widget">
+        <h2>Visitors</h2>
+        <div class="visitor-counter">001234</div>
+      </div>
+    </div>
   </main>
 
   <footer>
