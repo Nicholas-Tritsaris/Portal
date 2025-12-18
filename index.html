@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retro Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #001f3f 0%, #003366 40%, #004c99 100%);
+      color: #fff;
+      font-family: "Comic Sans MS", "Trebuchet MS", Verdana, sans-serif;
+    }
+    header {
+      text-align: center;
+      padding: 12px;
+    }
+    .logo {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 3px ridge #c0d8ff;
+      background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
+      box-shadow: 0 0 12px rgba(0, 200, 255, 0.6);
+      text-shadow: 0 0 6px #9be7ff;
+      font-weight: bold;
+      color: #eef7ff;
+    }
+    marquee {
+      margin: 12px auto;
+      max-width: 860px;
+      color: #ffff99;
+      background: rgba(0, 0, 0, 0.25);
+      border: 2px groove #99ccff;
+      padding: 6px 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      background: #0b2f66;
+      border-bottom: 3px ridge #6fbaff;
+      padding: 8px;
+    }
+    nav a {
+      color: #e7f3ff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 2px outset #b7dcff;
+      background: #1d4f8a;
+    }
+    nav a:hover {
+      color: #ffffcc;
+      border-style: inset;
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 3px double #99ccff;
+      background: rgba(255,255,255,0.08);
+    }
+    h2 {
+      color: #aee3ff;
+      text-shadow: 0 0 6px rgba(175, 231, 255, 0.55);
+    }
+    footer {
+      text-align: center;
+      padding: 12px;
+      color: #dbefff;
+      font-size: 12px;
+    }
+    .blink {
+      animation: blink 1s steps(2, start) infinite;
+    }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0.25; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="blink">★</span> Retro Portal <span class="blink">★</span>
+    </div>
+    <marquee behavior="scroll" direction="left" scrollamount="4">
+      Welcome to the Portal — your gateway to retro projects and experiments!
+    </marquee>
+  </header>
+
+  <nav>
+    <a href="../index.html">Main Hub</a>
+    <a href="#projects">Portal Projects</a>
+    <a href="#about">About Portal</a>
+  </nav>
+
+  <main>
+    <h2 id="projects">Portal Projects</h2>
+    <p>This repository hosts the Portal section of Nicholas Tritsaris’ retro web collection. It acts as a gateway to experiments, side projects, and creative explorations.</p>
+
+    <h2 id="about">About Portal</h2>
+    <p><strong>Retro Portal</strong> is styled with the same nostalgic early‑2000s aesthetic as the main hub. It’s a launchpad for new ideas, interactive content, and experimental retro computing projects.</p>
+    <ul>
+      <li>🔗 Gateway to different projects and archives</li>
+      <li>🎮 Retro theme consistent with the main site</li>
+      <li>🧩 Exploration through sub‑pages and experiments</li>
+      <li>🌐 Part of the broader retro web ecosystem</li>
+    </ul>
+  </main>
+
+  <footer>
+    © 2000–2025 Retro Portal • Part of Nicholas Tritsaris’ Retro Web Collection • <span class="blink">Under Perpetual Construction</span>
+  </footer>
+</body>
+</html>
